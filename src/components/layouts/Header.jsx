@@ -25,7 +25,9 @@ const Header = () => {
         <Container>
           <div className="flex justify-between items-center py-4">
             <div className="">
+              <Link>
               <Image ImgSrc={Logo} className="" />
+              </Link>
             </div>
             <div className="">
               <ul className='flex justify-between items-center gap-x-6'>

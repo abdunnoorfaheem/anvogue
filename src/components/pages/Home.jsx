@@ -1,9 +1,10 @@
 import React from 'react'
+import WhatsNew from '../layouts/WhatsNew'
 
 const Home = () => {
   return (
     <>
-      <h1>Home</h1>
+      <WhatsNew/>
     </>
   )
 }

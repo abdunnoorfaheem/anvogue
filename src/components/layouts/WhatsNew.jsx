@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '../Container'
+import Products from '../Products'
+import axios from 'axios';
 
 const WhatsNew = () => {
+    let [product,setProduct]=useState([]);
+
+    async function viewData(){
+      let data =await axios.get("https://dummyjson.com/products");
+      setProduct(data.data.products);
+         
+    }
+    viewData();
     return (
         <>
             <section>
@@ -17,6 +27,15 @@ const WhatsNew = () => {
                                 <li>Shirt</li>
                             </ul>
                         </div>
+                    </div>
+                    <div className="flex flex-wrap gap-y-6 gap-x-2">
+                        {
+                            product.map((item)=>(
+                                <div className="">
+                                    <Products key={item.id} ProductImg={item.thumbnail} productTitle={item.title} productPrice={item.price} productDiscount={item.discountPercentage}/>
+                                </div>
+                            ))
+                        }
                     </div>
                 </Container>
             </section>

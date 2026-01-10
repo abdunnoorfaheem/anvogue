@@ -31,8 +31,8 @@ const WhatsNew = () => {
                     <div className="flex flex-wrap gap-y-6 gap-x-2">
                         {
                             product.map((item)=>(
-                                <div className="">
-                                    <Products key={item.id} ProductImg={item.thumbnail} productTitle={item.title} productPrice={item.price} productDiscount={item.discountPercentage}/>
+                                <div className="" key={item.id}>
+                                    <Products  ProductImg={item.thumbnail} productTitle={item.title} productPrice={item.price} productDiscount={item.discountPercentage}/>
                                 </div>
                             ))
                         }
